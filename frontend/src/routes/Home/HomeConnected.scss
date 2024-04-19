@@ -1,0 +1,33 @@
+.ui.test.custom-color {
+  background-color: aqua;
+  color: greenyellow;
+}
+.TabContaineTest.container {
+  min-width: 95%;
+}
+.ui.tabular.menu .item {
+  background-color: #8782829b !important;
+  color: #dfdfdf !important;
+
+  margin: 0.5rem;
+  border: 0;
+}
+.ui.tabular.menu .active.item {
+  background-color: #500202e6 !important;
+  color: #ffffff !important;
+}
+.ui.bottom.attached.segment.active.tab.tabpane,
+.ui.bottom.attached.segment.active.tab {
+  background-color: #500202e6 !important;
+
+  // box-shadow: 1px 2px 4px #fdfcfde9 !important;
+}
+// .ui.attached:not(.message) + .ui.attached.segment:not(.top) {
+//   background-color: #0dd9f0c6;
+// }
+.ui.table:last-child {
+  background-color: #e3e2e1b3;
+}
+.pomme {
+  background-color: #cccccc !important;
+}

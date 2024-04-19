@@ -1,0 +1,52 @@
+@use '/src/styles/variables' as v;
+
+.inventory {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    margin: 0.3rem 0;
+    display: flex;
+    gap: 0.3rem;
+  }
+  .item {
+    border-radius: 0.28571429rem;
+    align-items: center;
+    background-color: white;
+
+    &-name {
+      border-radius: 0.28571429rem;
+      justify-content: center;
+      font-weight: bold;
+      flex: 1 1 35px;
+      background-color: lightblue;
+    }
+
+    &-description {
+      border-radius: 0.28571429rem;
+      text-align: left;
+      flex: 2 1 70px;
+      background-color: lightgreen;
+    }
+
+    .ui.button {
+      margin: 0;
+      background-color: #611a1a;
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    h3 {
+      cursor: pointer;
+    }
+    .item-description {
+      display: none;
+    }
+    .item-name {
+      flex: 1 1 auto;
+    }
+  }
+}

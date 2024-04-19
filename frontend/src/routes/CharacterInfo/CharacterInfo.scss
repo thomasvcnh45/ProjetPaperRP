@@ -1,0 +1,47 @@
+@use '../../styles/variables' as v;
+
+div.ui.segment.character-info {
+  background-color: rgb(250, 186, 47);
+
+  span {
+    margin: 0 0.1em;
+  }
+
+  input {
+    margin: 0 1.2em 0 0;
+    border: none;
+    // background-color: transparent;
+    font-size: 1.15em;
+  }
+
+  #name {
+    font-weight: bold;
+    width: fit-content;
+  }
+  #classes {
+    width: 6em;
+  }
+  #level {
+    width: 3em;
+  }
+  #experience {
+    width: 4em;
+    text-align: right;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .scrollbar {
+    float: none;
+    margin: 1.2em;
+  }
+
+  .ui.tabular.menu {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+}
+// .stat-name {
+// }
