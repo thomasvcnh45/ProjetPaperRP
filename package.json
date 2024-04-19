@@ -1,0 +1,33 @@
+{
+  "name": "projet-14-paperrp-back",
+  "version": "1.0.0",
+  "description": "Pour créer vos branches ,",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "db:structure": "psql -U rppaper -d rppaper -f ./data/structure.sql",
+    "db:seeding": "node ./data/seeding.js",
+    "db:create": "npm run db:structure; npm run db:seeding"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "faker": "^6.6.6",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.0",
+    "pg": "^8.11.4",
+    "regex": "^0.1.1",
+    "sequelize": "^6.37.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
+}
