@@ -42,13 +42,13 @@ function ClassesModal({ charId, onAddSpell }: ClassesModalProps) {
       <ModalContent>
         <Table striped>
           <TableHeader>
-            <TableRow>
+            <TableRow className="table-row-class-header">
               <TableHeaderCell>Nom de la Classe</TableHeaderCell>
               <TableHeaderCell>Description de la Classe</TableHeaderCell>
               <TableHeaderCell>Apprendre la Classe</TableHeaderCell>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="table-body-class">
             {classes.map((classe) => (
               <TableRow key={classe.id}>
                 <TableCell>{classe.name}</TableCell>

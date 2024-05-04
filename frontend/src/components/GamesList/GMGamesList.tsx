@@ -9,7 +9,7 @@ import {
 } from '../../store/actions/gameslist';
 import characterUserListActions from '../../store/actions/charactereUserList';
 import { useNavigate } from 'react-router-dom';
-
+import './GMGamesList.scss';
 type GMGamesListProps = {
   gm: boolean;
 };
@@ -108,7 +108,11 @@ const GMGamesList: React.FC<GMGamesListProps> = ({ gm }) => {
       {!isPending && (
         <>
           <Tab panes={panes} renderActiveOnly={false} gm={gm} />
-          {gm && <Button onClick={handleCreateGame}>Nouvelle partie</Button>}
+          {gm && (
+            <Button className="newGame" onClick={handleCreateGame}>
+              Nouvelle partie
+            </Button>
+          )}
         </>
       )}
     </>

@@ -14,39 +14,48 @@
   .item {
     border-radius: 0.28571429rem;
     align-items: center;
-    background-color: white;
+    background-color: v.$color-background !important;
 
     &-name {
       border-radius: 0.28571429rem;
       justify-content: center;
       font-weight: bold;
       flex: 1 1 35px;
-      background-color: lightblue;
+      background-color: v.$color-background !important;
     }
 
     &-description {
       border-radius: 0.28571429rem;
       text-align: left;
       flex: 2 1 70px;
-      background-color: lightgreen;
+      background-color: #611a1a94;
     }
 
     .ui.button {
       margin: 0;
-      background-color: #611a1a;
       color: white;
     }
   }
 
   @media only screen and (max-width: 400px) {
+    .ui.button {
+      size: 1rem;
+    }
     h3 {
       cursor: pointer;
     }
-    .item-description {
-      display: none;
+    .container {
+      padding: 0 !important;
+      margin: 0;
     }
+    // .item-description {
+    //   display: none;
+    // }
     .item-name {
       flex: 1 1 auto;
     }
   }
+}
+.bag {
+  border: none !important;
 }

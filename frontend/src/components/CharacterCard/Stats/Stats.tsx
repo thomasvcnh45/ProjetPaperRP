@@ -62,7 +62,7 @@ function Stats({ stats, note: charNotes, charId, onChangeNotes }: StatsProps) {
         </Segment>
       </GridColumn>
       <GridColumn width={16} mobile={16} tablet={8} computer={12}>
-        <Segment>
+        <Segment className="attack">
           <Form onSubmit={handleSubmit}>
             Attaques et Incantations
             <TextArea

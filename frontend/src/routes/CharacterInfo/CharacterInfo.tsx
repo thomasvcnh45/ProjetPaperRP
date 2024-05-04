@@ -166,7 +166,7 @@ function CharacterInfo() {
         />
         <span className="character-xp"> pts xp</span>
       </Segment>
-      <Segment>
+      <Segment className="character-pane">
         <Tab panes={panes} className="scrollbar" renderActiveOnly={false} />
       </Segment>
     </>

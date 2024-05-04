@@ -81,7 +81,7 @@ function Skills({ skills }: SkillsProps) {
                 {skills
                   .filter((skill) => skill.is_active === false)
                   .map((skill) => (
-                    <li className="skill" key={skill.id}>
+                    <li className="list-skill" key={skill.id}>
                       <div className="skill">
                         <div className="skill-name">{skill.name}</div>
                         <div className="skill-description">{skill.note}</div>
@@ -96,7 +96,7 @@ function Skills({ skills }: SkillsProps) {
           </Segment>
         </GridColumn>
         <GridColumn>
-          <Segment>
+          <Segment className="active-skills">
             <h3 onClick={() => toggleSkill(-2)}>Compétences actives</h3>
             <div>
               <ul
@@ -108,7 +108,7 @@ function Skills({ skills }: SkillsProps) {
                 {skills
                   .filter((skill) => skill.is_active === true)
                   .map((skill) => (
-                    <li className="skill" key={skill.id}>
+                    <li className="list-skill" key={skill.id}>
                       <div className="skill">
                         <div className="skill-name">{skill.name}</div>
                         <div className="skill-description">{skill.note}</div>

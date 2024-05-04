@@ -1,4 +1,4 @@
-.list .ui.button{
+.list .ui.button {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -6,17 +6,43 @@
 
 @media only screen and (max-width: 767px) {
   .game.bob {
-    display: none!important;
+    display: none !important;
   }
-  .game-details-container .ui.button{
+  .game-details-container .ui.button {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  .list .ui.button{
+  .list .ui.button {
     margin-top: 20px;
     margin-bottom: 10px;
     margin-left: 10px;
   }
+}
+input {
+  outline: none;
+  color: #f0e68c;
+  background-color: rgba(107, 90, 47, 0.777) !important;
+  border-radius: 5%;
+  padding: 0.5rem;
+}
+.games-details-container-box {
+  min-width: 90vw;
+}
+.ui.table {
+  color: #f0e68c !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+.ui.table:first-child {
+  background-color: rgba(0, 255, 255, 0) !important;
+}
+.ui.table:nth-child(2) {
+  background-color: #3b2b17c6 !important;
+  border: 1px solid rgba(118, 32, 28, 0.726) !important;
+}
+.ui.table:nth-child(3) {
+  background-color: #3b2b17b8 !important;
+  border: 1px solid rgba(118, 32, 28, 0.726) !important;
 }
 // .game-details-container {
 //   display: flex;

@@ -35,3 +35,60 @@
     transform: rotate(360deg);
   }
 }
+.ui.text.container {
+  min-width: 80vw;
+  border: none;
+}
+.test {
+  background-color: #3b2b1789 !important;
+}
+.ui.attached:not(.message) + .ui.attached.segment:not(.top) {
+  border-top: none;
+  background-color: #3b2b1700;
+}
+.ui.tabular.menu .active.item {
+  background-color: #556b2f !important;
+  color: #e0e0e0 !important;
+  border: solid 1px #556b2f !important;
+}
+.ui.attached:not(.message) + .ui.attached.segment:not(.top) {
+  border-top: none;
+  border: solid 1px #556b2f !important;
+}
+.ui.tabular.menu .item {
+  background-color: rgba(0, 0, 0, 0.275) !important;
+  border-radius: 5%;
+  color: #f0e68c !important;
+}
+
+.ui.tabular.menu {
+  border-bottom: none !important
+  ;
+}
+
+.ui.table thead th {
+  background-color: #556b2fbc !important;
+  color: #b5b3b3 !important;
+}
+.ui.table {
+  background-color: #6b5a2f !important;
+}
+
+.game.characterRow {
+  color: #f0e68c;
+}
+.game.partiebody {
+  color: #f0e68c;
+}
+
+.ui.Modale {
+  background-color: #556b2f !important;
+}
+.ui.modal > .header,
+.ui.modal > .content,
+.ui.modal > .actions {
+  background-color: #556b2f !important;
+}
+.ui.modal > .header {
+  color: white !important;
+}

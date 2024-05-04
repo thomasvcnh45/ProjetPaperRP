@@ -22,7 +22,7 @@
       border: solid 1px v.$color-border;
       border-radius: 0.28571429rem;
       justify-content: center;
-      background-color: rgb(94, 93, 93);
+      background-color: v.$color-background !important;
       color: white;
       font-weight: bold;
       flex: 1 1 35px;

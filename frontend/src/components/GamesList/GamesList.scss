@@ -3,7 +3,35 @@
     margin-right: 10px;
     margin-top: 10px;
   }
-  .game.pomme {
-    display: none!important;
+  .game.characterHeader {
+    display: none !important;
   }
+  .game.partieheader {
+    display: none !important;
+  }
+}
+
+.gameslist {
+  background-color: #3b2b17 !important; /* Brun foncé */
+}
+
+@media only screen and (max-width: 450px) {
+  .gameslist {
+    text-align: left !important;
+  }
+}
+
+.ui.button {
+  color: #e0e0e0 !important; /* Or */
+  background-color: #6b5a2f !important;
+  box-shadow: 0 1px 10px rgba(255, 217, 0, 0.375) !important;
+}
+
+.ui.button:hover {
+  background-color: #f0e68c !important;
+  color: black !important; /* Jaune paille */
+}
+
+.ui.button:active {
+  background-color: #50c878 !important; /* Vert émeraude */
 }

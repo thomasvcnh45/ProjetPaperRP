@@ -50,7 +50,7 @@ function GamesList({ gamesList, usersList, gm }: GamesListProps) {
             '@media only screen and (max-width: 450px)': { textAlign: 'left' },
           }}
         >
-          <TableHeader className="game pomme">
+          <TableHeader className="game partieheader">
             <TableRow>
               <TableHeaderCell>Nom de la partie</TableHeaderCell>
               <TableHeaderCell>Campagne</TableHeaderCell>
@@ -59,7 +59,7 @@ function GamesList({ gamesList, usersList, gm }: GamesListProps) {
               <TableHeaderCell>Actions</TableHeaderCell>
             </TableRow>
           </TableHeader>
-          <TableBody className="game">
+          <TableBody className="game partiebody">
             {gamesList.map((game) => (
               <TableRow key={game.id}>
                 <TableCell>{game.name}</TableCell>
@@ -103,8 +103,8 @@ function GamesList({ gamesList, usersList, gm }: GamesListProps) {
           className="charcterslist"
           style={{ textAlign: 'center' }}
         >
-          <TableHeader className="game pomme">
-            <TableRow className="game">
+          <TableHeader className="game characterHeader">
+            <TableRow className="game characterRow">
               <TableHeaderCell>Personnage</TableHeaderCell>
               <TableHeaderCell>Nom de la partie</TableHeaderCell>
               <TableHeaderCell>Campagne</TableHeaderCell>
@@ -113,9 +113,9 @@ function GamesList({ gamesList, usersList, gm }: GamesListProps) {
               <TableHeaderCell>Actions</TableHeaderCell>
             </TableRow>
           </TableHeader>
-          <TableBody className="game">
+          <TableBody className="game characterBody">
             {usersList.flat().map((character: Character) => (
-              <TableRow key={character.id}>
+              <TableRow className="game characterRow" key={character.id}>
                 <TableCell>{character.name}</TableCell>
                 <TableCell>{character.game?.name}</TableCell>
                 <TableCell>{character.game?.campaign} </TableCell>

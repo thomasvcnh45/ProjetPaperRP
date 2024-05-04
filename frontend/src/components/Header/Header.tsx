@@ -145,5 +145,5 @@ function Header() {
     </header>
   );
 }
-// gamesListData= [{},{}{}]
+
 export default Header;

@@ -32,6 +32,7 @@ function LogbookModal() {
 
   return (
     <Modal
+      className="Modale"
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}

@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Button, Divider, Grid, GridColumn, Segment } from 'semantic-ui-react';
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  GridColumn,
+  Segment,
+} from 'semantic-ui-react';
 import './Inventory.scss';
 import {
   RiArrowLeftLine,
@@ -88,75 +95,75 @@ function Inventory({ items }: InventoryProps) {
   };
 
   return (
-    <Segment className="inventory">
-      <Grid columns={2} stackable>
-        <GridColumn>
-          <div>
-            <h3 onClick={toggleBackpack}>Sac à dos</h3>
-            {isBackpackOpen && (
-              <ul>
-                {items
-                  .filter((item) => !item.is_equipped)
-                  .map((item) => (
-                    <li className="item" key={item.id}>
-                      <div className="item-name">{item.name}</div>
-                      <div className="item-description">{item.note}</div>
-                      <Button
-                        type="button"
-                        onClick={() => handleDropItem(id, item.id)}
-                      >
-                        <RiDeleteBin2Line size={iconSize} />
-                      </Button>
-                      <Button
-                        type="button"
-                        onClick={() => handleEquipItem(id, item.id)}
-                      >
-                        <RiArrowRightLine size={iconSize} />
-                      </Button>
-                    </li>
-                  ))}
-                <li>
-                  <InventoryModal charId={id} onAddItem={handleAddItem} />
-                </li>
-              </ul>
-            )}
-          </div>
-        </GridColumn>
-        <GridColumn>
-          <div>
-            <h3 onClick={toggleEquipment}>Équipement</h3>
-            {isEquipmentOpen && (
-              <ul>
-                {items
-                  .filter((item) => item.is_equipped)
-                  .map((item) => (
-                    <li className="item" key={item.id}>
-                      <Button
-                        type="button"
-                        onClick={() => handleEquipItem(id, item.id)}
-                      >
-                        <RiArrowLeftLine size={iconSize} />
-                      </Button>
-                      <div className="item-name">{item.name}</div>
-                      <div className="item-description">{item.note}</div>
-                      <Button
-                        type="button"
-                        onClick={() => handleDropItem(id, item.id)}
-                      >
-                        <RiDeleteBin2Line size={iconSize} />
-                      </Button>
-                    </li>
-                  ))}
-              </ul>
-            )}
-          </div>
-        </GridColumn>
-      </Grid>
+    <Container className="bag">
+      <Segment className="inventory">
+        <Grid columns={2} stackable>
+          <GridColumn>
+            <div className="list-bag">
+              <h3 onClick={toggleBackpack}>Sac à dos</h3>
+              {isBackpackOpen && (
+                <ul>
+                  {items
+                    .filter((item) => !item.is_equipped)
+                    .map((item) => (
+                      <li className="item" key={item.id}>
+                        <div className="item-name">{item.name}</div>
+                        <div className="item-description">{item.note}</div>
+                        <Button
+                          type="button"
+                          onClick={() => handleDropItem(id, item.id)}
+                        >
+                          <RiDeleteBin2Line size={iconSize} />
+                        </Button>
+                        <Button
+                          type="button"
+                          onClick={() => handleEquipItem(id, item.id)}
+                        >
+                          <RiArrowRightLine size={iconSize} />
+                        </Button>
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </div>
+          </GridColumn>
+          <GridColumn>
+            <div className="list-equiped">
+              <h3 onClick={toggleEquipment}>Équipement</h3>
+              {isEquipmentOpen && (
+                <ul>
+                  {items
+                    .filter((item) => item.is_equipped)
+                    .map((item) => (
+                      <li className="item" key={item.id}>
+                        <Button
+                          type="button"
+                          onClick={() => handleEquipItem(id, item.id)}
+                        >
+                          <RiArrowLeftLine size={iconSize} />
+                        </Button>
+                        <div className="item-name">{item.name}</div>
+                        <div className="item-description">{item.note}</div>
+                        <Button
+                          type="button"
+                          onClick={() => handleDropItem(id, item.id)}
+                        >
+                          <RiDeleteBin2Line size={iconSize} />
+                        </Button>
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </div>
+          </GridColumn>
+        </Grid>
 
-      <Divider vertical>
-        <RiArrowLeftRightLine size={iconSize} />
-      </Divider>
-    </Segment>
+        <Divider vertical>
+          <RiArrowLeftRightLine size={iconSize} />
+        </Divider>
+      </Segment>
+      <InventoryModal charId={id} onAddItem={handleAddItem} />
+    </Container>
   );
 }
 

@@ -59,6 +59,7 @@ function SignupModal({
 
   return (
     <Modal
+      className="Modale"
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}

@@ -1,6 +1,10 @@
 @use '/src/styles/variables' as v;
 
 .Class {
+  background-color: #556b2f71 !important;
+  .ui.header {
+    color: white;
+  }
   ul {
     padding: 0;
   }
@@ -10,10 +14,10 @@
     display: flex;
     gap: 0.3rem;
   }
-  .spell {
+  .Class {
     border: solid 1px v.$color-border;
     border-radius: 0.28571429rem;
-    background-color: v.$color-background;
+    background-color: v.$color-background !important;
     align-items: center;
     padding: 0.5rem;
     color: white;
@@ -22,7 +26,7 @@
       border: solid 1px v.$color-border;
       border-radius: 0.28571429rem;
       justify-content: center;
-      background-color: rgb(94, 93, 93);
+      background-color: v.$color-background !important;
       color: white;
       font-weight: bold;
       flex: 1 1 35px;

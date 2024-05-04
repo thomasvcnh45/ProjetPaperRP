@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableBody,
   Table,
+  Container,
 } from 'semantic-ui-react';
 import './GameDetails.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -101,88 +102,93 @@ function GameDetails() {
   };
 
   return (
-    <Table striped className="list">
-      <Button onClick={retrunUserPage}>Retour</Button>
-      <Table className="game-details-container">
-        <TableHeader className="Game" style={{ textAlign: 'center' }}>
-          <TableRow>
-            <TableHeaderCell>Nom de la partie</TableHeaderCell>
-            <TableHeaderCell>Campagne</TableHeaderCell>
-            <TableHeaderCell>
+    <Container text className="games-details-container-box">
+      <Table striped className="list">
+        <Button onClick={retrunUserPage}>Retour</Button>
+
+        <Table className="game-details-container">
+          <TableHeader className="GameGameDetailsHeader">
+            <TableRow>
+              <TableHeaderCell>Nom de la partie</TableHeaderCell>
+              <TableHeaderCell>Campagne</TableHeaderCell>
+              <TableHeaderCell></TableHeaderCell>
+              <TableHeaderCell></TableHeaderCell>
+              <TableHeaderCell></TableHeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody className="GameGameDetailsBody">
+            <TableRow>
+              <TableCell className="list-item">
+                <input
+                  value={updatedName}
+                  onChange={(e) => handleFieldChange('name', e.target.value)}
+                />
+              </TableCell>
+              <TableCell className="list-item">
+                <input
+                  value={updatedCampaign}
+                  onChange={(e) =>
+                    handleFieldChange('campaign', e.target.value)
+                  }
+                />
+              </TableCell>
+              <Button onClick={handleSaveChanges}>Enregistrer</Button>
               <LogbookModal />
-            </TableHeaderCell>
-          </TableRow>
-        </TableHeader>
-        <TableBody className="Game" style={{ textAlign: 'center' }}>
-          <TableRow>
-          <TableCell className="list-item">
-            <input
-              value={updatedName}
-              onChange={(e) => handleFieldChange('name', e.target.value)}
-            />
-          </TableCell>
-          <TableCell className="list-item">
-            <input
-              value={updatedCampaign}
-              onChange={(e) => handleFieldChange('campaign', e.target.value)}
-            />
-          </TableCell>
-          <Button onClick={handleSaveChanges}>Enregistrer</Button>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Table striped className="gameslist">
-        <Dimmer active={isFetching}>
-          <Loader />
-        </Dimmer>
+              <InvitationForm
+                handleInvitation={handleInvitation}
+                usernameInvitation={usernameInvitation}
+                changeField={changeField}
+              />
+            </TableRow>
+          </TableBody>
+        </Table>
+        <Table striped className="gameslist">
+          <Dimmer active={isFetching}>
+            <Loader />
+          </Dimmer>
 
-        <TableHeader className="game bob" style={{ textAlign: 'center' }}>
-          <TableRow>
-            <TableHeaderCell>Joueurs</TableHeaderCell>
-            <TableHeaderCell>Personnages</TableHeaderCell>
-            <TableHeaderCell>Date MAJ</TableHeaderCell>
-            <TableHeaderCell>Statut</TableHeaderCell>
-            <TableHeaderCell>Campagne</TableHeaderCell>
-            <TableHeaderCell />
-          </TableRow>
-        </TableHeader>
-        <TableBody className="Game" style={{ textAlign: 'center' }}>
-          {charactersArray &&
-            charactersArray!.map((character) => (
-              <TableRow key={character.id}>
-                <TableCell className="list-item">
-                  {character!.user!.pseudo}
-                </TableCell>
-                <TableCell className="list-item">{character.name}</TableCell>
-                <TableCell className="list-item">
-                  {character.updatedAt
-                    ? new Date(character.updatedAt).toLocaleDateString()
-                    : new Date().toLocaleDateString()}
-                </TableCell>
-                <TableCell className="list-item">{status}</TableCell>
-                <TableCell className="list-item">
-                  <Button onClick={toggleStatus}>Archiver / Désarchiver</Button>
-                </TableCell>
-                <TableCell>
-                  <Button
-                    onClick={() => handleCharacterButtonClick(character.id)}
-                  >
-                    Fiche perso
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
-
-        <Button className="invitation-button-container">
-          <InvitationForm
-            handleInvitation={handleInvitation}
-            usernameInvitation={usernameInvitation}
-            changeField={changeField}
-          />
-        </Button>
+          <TableHeader className="game bob">
+            <TableRow>
+              <TableHeaderCell>Joueurs</TableHeaderCell>
+              <TableHeaderCell>Personnages</TableHeaderCell>
+              <TableHeaderCell>Date MAJ</TableHeaderCell>
+              <TableHeaderCell>Statut</TableHeaderCell>
+              <TableHeaderCell></TableHeaderCell>
+              <TableHeaderCell />
+            </TableRow>
+          </TableHeader>
+          <TableBody className="Game">
+            {charactersArray &&
+              charactersArray!.map((character) => (
+                <TableRow key={character.id}>
+                  <TableCell className="list-item">
+                    {character!.user!.pseudo}
+                  </TableCell>
+                  <TableCell className="list-item">{character.name}</TableCell>
+                  <TableCell className="list-item">
+                    {character.updatedAt
+                      ? new Date(character.updatedAt).toLocaleDateString()
+                      : new Date().toLocaleDateString()}
+                  </TableCell>
+                  <TableCell className="list-item">{status}</TableCell>
+                  <TableCell className="list-item">
+                    <Button onClick={toggleStatus}>
+                      Archiver / Désarchiver
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => handleCharacterButtonClick(character.id)}
+                    >
+                      Fiche perso
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
       </Table>
-    </Table>
+    </Container>
   );
 }
 

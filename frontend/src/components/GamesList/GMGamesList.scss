@@ -1,0 +1,22 @@
+.gameListItem {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Styles pour les boutons */
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.newGameButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newGame {
+  padding-top: 1rem !important;
+}

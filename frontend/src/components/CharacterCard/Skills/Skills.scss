@@ -15,7 +15,7 @@
   .skill {
     border: solid 1px v.$color-border;
     border-radius: 0.28571429rem;
-    background-color: v.$color-background;
+    // background-color: v.$color-background;
     align-items: center;
     color: white;
 
@@ -34,6 +34,9 @@
       flex: 2 1 70px;
     }
   }
+}
+.list-skill {
+  background-color: v.$color-background !important;
 }
 
 @media (max-width: 400px) {

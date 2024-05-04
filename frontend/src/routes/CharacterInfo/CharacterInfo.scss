@@ -1,7 +1,7 @@
 @use '../../styles/variables' as v;
 
 div.ui.segment.character-info {
-  background-color: rgb(250, 186, 47);
+  background: linear-gradient(90deg, transparent, #938410cc, transparent);
 
   span {
     margin: 0 0.1em;
@@ -12,6 +12,7 @@ div.ui.segment.character-info {
     border: none;
     // background-color: transparent;
     font-size: 1.15em;
+    color: white;
   }
 
   #name {
@@ -43,5 +44,35 @@ div.ui.segment.character-info {
     white-space: nowrap;
   }
 }
-// .stat-name {
+.ui.segment,
+.ui.segments .segment {
+  color: #ffffff;
+}
+.character-pane {
+  background-color: rgb(59 43 23 / 89%) !important;
+}
+
+.ui.segment .spells,
+.ui.segment .inventory,
+.ui.segment .active-skills,
+.ui.segment .passive-skills,
+.ui.segment .stat {
+  background-color: #556b2f71 !important;
+}
+.ui.segment .stat-name {
+  background-color: v.$color-background !important;
+}
+.ui.form textarea {
+  background-color: rgba(59, 43, 23, 0.842) !important;
+  color: #ffffff !important;
+}
+.ui .segment .stat-name {
+  border: 1px solid red($color: #de1515) !important;
+  background-color: #556b2f71;
+}
+
+// .ui.stackable.two.column.grid .column {
+//   flex: 1;
+//   display: flex;
+//   align-items: stretch;
 // }

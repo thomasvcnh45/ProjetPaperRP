@@ -15,8 +15,8 @@ function Home() {
     }
   }, [logged]);
   return (
-    <Container text classname="homeContainer">
-      <Container text classname="Container">
+    <Container text className="homeContainer">
+      <Container text className="homeContainerBox">
         <Header as="h2">PAPER RP</Header>
 
         <p>Bienvenue dans l&apos;antre virtuel où les légendes prennent vie!</p>
